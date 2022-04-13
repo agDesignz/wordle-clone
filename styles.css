@@ -4,49 +4,38 @@ h1 {
   font-size: 2.8rem;
   text-align: center;
   padding: 1.5rem 0;
+  color: #e8e8e8;
+}
+
+html {
+  background-color: #101010;
 }
 
 .game-section {
-  /* background-color: #4b4b4b;
-  border-radius: 10px; */
-  max-width: 350px;
-  /* padding: 1.5rem; */
+  padding-bottom: 25px;
   margin: auto;
 }
 
 .wordle-row {
-  padding: .6rem 1rem;
+  padding: 4px 0;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   margin: auto;
 }
 
 .wordle-box {
-  width: 45px;
-  height: 45px;
-  border-radius: 5px;
-  background-color: #e8e8e8;
-  border: 2px solid #4b4b4b;
+  width: 50px;
+  height: 50px;
+  margin: 0 4px;
+  font-size: 1.5rem;
+  background-color: #e6e6e6;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.spot-on {
-  background-color: #45e545;
-}
-
-.almost {
-  background-color: #ffff4b;
-}
-
-.wrong {
-  background-color: grey;
-  color: #e8e8e8;
-}
-
 #keyboard-cont {
-  margin: 2.5rem 1rem 0;
+  margin: 1.5rem 1rem 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -60,16 +49,97 @@ h1 {
   margin: 0.5rem 0;
 }
 
+button {
+  border: none;
+  box-shadow: none;
+}
+
 .keyboard-button {
+  background-color: #fafafa;
+  border-radius: 10px;
   width: 30px;
+  height: 40px;
   font-size: 1rem;
-  font-weight: 700;
-  padding: 0.4rem;
+  font-weight: 500;
+  text-align: center;
   margin: 0 2px;
   cursor: pointer;
   text-transform: uppercase;
 }
 
+.keyboard-button:active {
+  background-color: #585858;
+}
+
 .wider {
-  width: 65px;
+  width: auto;
+  padding: 0 .5rem;
+  font-size: .8rem;
+}
+
+.spot-on {
+  background-color: #45e545;
+}
+
+.almost {
+  background-color: #ffff4b;
+}
+
+.wrong {
+  background-color: #505050;
+  color: #f8f8f8;
+}
+
+.modal {
+  z-index: 10;
+  height: 100vh;
+  width: 100vw;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-color: #585858bc;
+}
+
+.flex {
+  display: flex;
+}
+
+.shortModal {
+  z-index: 10;
+  background-color: #e8e8e8;
+  color: #e57f00;
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.short-closer {
+  background-color: #585858;
+  color: #f8f8f8;
+  width: 100px;
+}
+.short-closer:hover, .short-closer:active {
+  background-color: #58585858;
+}
+
+
+@media all and (max-width: 359px){
+  .keyboard-button {
+    width: 25px;
+    height: 30px;
+    border-radius: 8px;
+  }
+  .wider {
+    width: auto;
+  }
+  .wordle-box {
+    width: 48px;
+    height: 48px;
+  }
+
+
 }
