@@ -21,7 +21,7 @@
     const modal = document.querySelector(".modal");
 
 
-    const wordleWord = "PLACE";
+    const wordleWord = "BRINE";
     const totalTries = 6;
     let remainingTries = totalTries;
     let thisTry = [];
