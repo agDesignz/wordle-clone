@@ -3,49 +3,74 @@
 *::before {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
 html {
-  font-size: 62.5%; }
+  font-size: 62.5%;
+}
 
 body {
   box-sizing: border-box;
-  text-align: center; }
+  text-align: center;
+}
 
+@keyframes addLetter {
+  0% {
+    transform: translateY(0);
+  }
+  5% {
+    transform: translateY(-0.5rem);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
 body {
   line-height: 1.7;
-  font-size: 1.6rem; }
+  font-size: 1.6rem;
+}
 
 .heading-primary {
   font-size: 3.5rem;
-  color: #e6e6e6; }
+  color: #e6e6e6;
+}
 
 .u-text-center {
-  text-align: center; }
+  text-align: center;
+}
 
 .u-mb-xl {
-  margin-bottom: 10rem; }
+  margin-bottom: 10rem;
+}
 
 .u-mb-l {
-  margin-bottom: 8rem; }
+  margin-bottom: 8rem;
+}
 
 .u-mb-m {
-  margin-bottom: 4rem; }
+  margin-bottom: 4rem;
+}
 
 .u-mb-s {
-  margin-bottom: 1.5rem; }
+  margin-bottom: 1.5rem;
+}
 
 .u-mt-xl {
-  margin-top: 10rem; }
+  margin-top: 10rem;
+}
 
 .u-mt-l {
-  margin-top: 8rem; }
+  margin-top: 8rem;
+}
 
 .u-mt-m {
-  margin-top: 4rem; }
+  margin-top: 4rem;
+}
 
 .u-mt-s {
-  margin-top: 2rem; }
+  margin-top: 2rem;
+}
 
 .wordle-modal {
   z-index: 10;
@@ -55,24 +80,27 @@ body {
   height: 100vh;
   width: 100vw;
   background-image: linear-gradient(to bottom right, rgba(16, 16, 16, 0.7), rgba(80, 80, 80, 0.7));
-  display: none; }
-  .wordle-modal__card {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 10;
-    background-color: #878787;
-    color: #fafafa;
-    font-size: 2rem;
-    font-weight: 600;
-    padding: 2rem;
-    min-height: 20rem;
-    min-width: 32rem; }
-  .wordle-modal.block {
-    display: block; }
+  display: none;
+}
+.wordle-modal__card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  background-color: #878787;
+  color: #fafafa;
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 2rem;
+  min-height: 20rem;
+  min-width: 32rem;
+}
+.wordle-modal.block {
+  display: block;
+}
 
-.btn-wordle {
+.btn-ok {
   text-transform: uppercase;
   text-decoration: none;
   width: 6rem;
@@ -80,30 +108,34 @@ body {
   border-radius: 50%;
   border: 1px solid #e6e6e6;
   cursor: pointer;
-  background-image: linear-gradient(52deg, #101010, #2b4fa3);
+  background-image: linear-gradient(52deg, #101010, rgb(43, 79, 163));
   color: #fafafa;
-  box-shadow: 0 1rem 2rem rgba(16, 16, 16, 0.2); }
-  .btn-wordle:active {
-    transform: translateY(0.1rem);
-    box-shadow: 0 0.5rem 1rem rgba(16, 16, 16, 0.2); }
+  box-shadow: 0 1rem 2rem rgba(16, 16, 16, 0.2);
+}
+.btn-ok:active {
+  transform: translateY(0.1rem);
+  box-shadow: 0 0.5rem 1rem rgba(16, 16, 16, 0.2);
+}
 
 .game-board__row {
   display: flex;
   justify-content: center;
-  margin: 4px auto; }
-  .game-board__row__box {
-    width: 5rem;
-    height: 5rem;
-    margin: 0 4px;
-    font-size: 3.5rem;
-    background-color: #e6e6e6;
-    display: flex;
-    justify-content: center;
-    align-items: center; }
+  margin: 4px auto;
+}
+.game-board__row__box {
+  width: 5rem;
+  height: 5rem;
+  margin: 0 4px;
+  font-size: 3.5rem;
+  background-color: #e6e6e6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .keyboard__row {
-  margin-bottom: 1rem; }
-
+  margin-bottom: 1rem;
+}
 .keyboard__button {
   border: none;
   box-shadow: none;
@@ -116,23 +148,32 @@ body {
   margin: 0 2px;
   cursor: pointer;
   text-transform: uppercase;
-  transition: all, .2s; }
-  .keyboard__button--del, .keyboard__button--enter {
-    width: auto;
-    padding: .5rem;
-    font-size: 1.2rem; }
-  .keyboard__button:active {
-    transform: translateY(0.1rem); }
+  transition: all, 0.2s;
+}
+.keyboard__button--del, .keyboard__button--enter {
+  width: auto;
+  padding: 0.5rem;
+  font-size: 1.2rem;
+}
+.keyboard__button:active {
+  transform: translateY(0.2rem);
+}
 
 .spot-on {
-  background-color: #45e545; }
+  background-color: #45e545;
+}
 
 .almost {
-  background-color: #ffff4b; }
+  background-color: #ffff4b;
+}
 
 .wrong {
   background-color: #505050;
-  color: #e6e6e6; }
+  color: #e6e6e6;
+}
 
 html {
-  background-color: #101010; }
+  background-color: #101010;
+}
+
+/*# sourceMappingURL=styles.css.map */

@@ -1,17 +1,17 @@
-@import "abstracts/functions";
-@import "abstracts/mixins";
-@import "abstracts/variables";
+@use "abstracts/functions";
+@use "abstracts/mixins";
+@use "abstracts/variables";
 
-@import "base/base";
-@import "base/animations";
-@import "base/typography";
-@import "base/utilities";
+@use "base/base";
+@use "base/animations";
+@use "base/typography";
+@use "base/utilities";
 
-@import "components/wordle-modal";
-@import "components/button-wordle";
+@use "components/wordle-modal";
+@use "components/button-ok";
 
-@import "layout/game-board";
-@import "layout/keyboard";
-@import "layout/verification";
+@use "layout/game-board";
+@use "layout/keyboard";
+@use "layout/verification";
 
-@import "pages/wordle";
+@use "pages/wordle";

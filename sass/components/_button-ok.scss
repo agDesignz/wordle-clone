@@ -1,0 +1,19 @@
+@use "../abstracts/variables";
+
+.btn-ok {
+    text-transform: uppercase;
+    text-decoration: none;
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    border: 1px solid variables.$color-white-cream;
+    cursor: pointer;
+    background-image: linear-gradient(52deg, variables.$color-black, variables.$color-blue-medium);
+    color: variables.$color-white;
+    box-shadow: 0 1rem 2rem rgba(variables.$color-black,.2);
+
+    &:active {
+    transform: translateY(.1rem);
+    box-shadow: 0 0.5rem 1rem rgba(variables.$color-black,.2);
+  }
+}

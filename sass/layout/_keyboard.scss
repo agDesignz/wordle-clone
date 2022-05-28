@@ -1,3 +1,5 @@
+@use "../abstracts/variables";
+
 .keyboard {
 
   &__row {
@@ -7,7 +9,7 @@
   &__button {
     border: none;
     box-shadow: none;
-    background-color: $color-white;
+    background-color: variables.$color-white;
     border-radius: 1rem;
     width: 3rem;
     height: 4rem;
@@ -26,7 +28,7 @@
     }
 
     &:active {
-      transform: translateY(.1rem);
+      transform: translateY(.2rem);
     }
   }
 }

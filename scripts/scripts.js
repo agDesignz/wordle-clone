@@ -29,7 +29,7 @@
 
     // function guessWord() {
 
-      buttons.forEach(button => {
+      buttons.forEach(button => {                   // BUTTONS INPUT
         button.addEventListener("click", (e) => {
           if (remainingTries === 0) {
             return;
@@ -59,13 +59,15 @@
         });
       });
 
+
       function placeLetter(entry) {
         if (nextLetter > 4) {
           return;
         }
         let row = totalTries - remainingTries;
-        let box = nextLetter;
-        document.querySelector(`#row${row}box${box}`).innerText = entry;
+        let box = document.querySelector(`#row${row}box${nextLetter}`);
+        box.innerText = entry;
+        box.style.animation = "addLetter .4s ease-in";
         thisTry.push(entry);
         nextLetter++;
       }
@@ -128,7 +130,8 @@
               thisTry.every((val, index) => val === answer[index])
             ) {
               let winMsg = "You Win. Play Again?"
-              showModal(winMsg, totalReset);
+              showModal(winMsg, totalReset);              showModal(noWordMsg, rowReset);
+
               return;
             } else if (remainingTries === 1) {
               let loseMsg = "Sorry, no more tries.";
@@ -149,7 +152,7 @@
                 // shortModal.classList.add("block");
                 const modalLabel = document.querySelector(".wordle-modal__card > h4");
                 modalLabel.innerText = labelMessage;
-                const closer = document.querySelector(".btn-wordle");
+                const closer = document.querySelector(".btn-ok");
                 closer.addEventListener("click", () => {
                   modalLabel.innerText = "";
                   // shortModal.classList.remove("flex");
