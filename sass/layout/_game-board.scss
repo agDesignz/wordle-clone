@@ -5,13 +5,14 @@
   &__row {
     display: flex;
     justify-content: center;
-    margin: 4px auto;
+    margin: 8px auto;
 
     &__box {
       width: 5rem;
       height: 5rem;
       margin: 0 4px;
       font-size: 3.5rem;
+      border-radius: 2px;
       background-color: variables.$color-white-cream;
       display: flex;
       justify-content: center;

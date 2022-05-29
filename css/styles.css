@@ -120,13 +120,14 @@ body {
 .game-board__row {
   display: flex;
   justify-content: center;
-  margin: 4px auto;
+  margin: 8px auto;
 }
 .game-board__row__box {
   width: 5rem;
   height: 5rem;
   margin: 0 4px;
   font-size: 3.5rem;
+  border-radius: 2px;
   background-color: #e6e6e6;
   display: flex;
   justify-content: center;

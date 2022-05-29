@@ -77,8 +77,9 @@
           return;
         }
         let row = totalTries - remainingTries;
-        let box = nextLetter - 1;
-        document.querySelector(`#row${row}box${box}`).innerText = "";
+        let box = document.querySelector(`#row${row}box${nextLetter - 1}`);
+        box.innerText = "";
+        box.style.animation = "";
         nextLetter--;
         thisTry.pop();
       }
@@ -130,8 +131,7 @@
               thisTry.every((val, index) => val === answer[index])
             ) {
               let winMsg = "You Win. Play Again?"
-              showModal(winMsg, totalReset);              showModal(noWordMsg, rowReset);
-
+              showModal(winMsg, totalReset);
               return;
             } else if (remainingTries === 1) {
               let loseMsg = "Sorry, no more tries.";
