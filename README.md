@@ -1,1 +1,1 @@
-# wordleClone
+# wordle-clone
