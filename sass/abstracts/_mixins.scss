@@ -1,1 +1,7 @@
 // 380px is where the keyboard breaks
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone-sm {
+    @media (max-width: 23.75em) { @content }; // 380px
+  }
+}

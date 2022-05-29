@@ -1,23 +1,54 @@
 // @use "../base/animations";
 @use "../abstracts/variables";
 
-.game-board {
+.board {
   &__row {
     display: flex;
     justify-content: center;
     margin: 8px auto;
+  }
 
-    &__box {
-      width: 5rem;
-      height: 5rem;
-      margin: 0 4px;
-      font-size: 3.5rem;
-      border-radius: 2px;
+  &__box {
+    width: 5rem;
+    height: 5rem;
+    margin: 0 4px;
+    font-size: 3.5rem;
+    border-radius: 2px;
+    position: relative;
+    perspective: 180rem;
+    -moz-perspective: 180rem;
+    overflow: hidden;
+    transition: background-color 0.5s;
+  }
+
+  &__square {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transition: transform 1s;
+
+
+    &--front {
       background-color: variables.$color-white-cream;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      transition: background-color .5s;
+      // transform: rotateX(-20deg);
+
+      &.flipped {
+        transform: rotateX(180deg);
+      }
+    }
+
+    &--back {
+      transform: rotateX(-180deg);
+
+      &.flipped {
+        transform: rotateX(0);
+      }
     }
   }
 }

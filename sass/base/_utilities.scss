@@ -1,11 +1,45 @@
-.u-text-center {text-align: center;}
+@use "../abstracts/mixins";
 
-.u-mb-xl {margin-bottom: 10rem;}
-.u-mb-l {margin-bottom: 8rem;}
-.u-mb-m {margin-bottom: 4rem;}
-.u-mb-s {margin-bottom: 1.5rem;}
+.u-text-center {
+  text-align: center;
+}
 
-.u-mt-xl {margin-top: 10rem;}
-.u-mt-l {margin-top: 8rem;}
-.u-mt-m {margin-top: 4rem;}
-.u-mt-s {margin-top: 2rem;}
+.u-mb-xl {
+  margin-bottom: 10rem;
+}
+
+.u-mb-l {
+  margin-bottom: 8rem;
+}
+
+.u-mb-m {
+  margin-bottom: 4rem;
+
+  @include mixins.respond(phone-sm) {
+    margin-bottom: 1.5rem;
+  }
+}
+
+.u-mb-s {
+  margin-bottom: 1.5rem;
+}
+
+.u-mt-xl {
+  margin-top: 10rem;
+}
+
+.u-mt-l {
+  margin-top: 8rem;
+}
+
+.u-mt-m {
+  margin-top: 4rem;
+
+  @include mixins.respond(phone-sm) {
+    margin-top: 1.5rem;
+  }
+}
+
+.u-mt-s {
+  margin-top: 2rem;
+}

@@ -9,13 +9,18 @@
 html {
   font-size: 62.5%;
 }
+@media (max-width: 23.75em) {
+  html {
+    font-size: 50%;
+  }
+}
 
 body {
   box-sizing: border-box;
   text-align: center;
 }
 
-@keyframes addLetter {
+@keyframes bounce {
   0% {
     transform: translateY(0);
   }
@@ -34,6 +39,7 @@ body {
 .heading-primary {
   font-size: 3.5rem;
   color: #e6e6e6;
+  line-height: 1;
 }
 
 .u-text-center {
@@ -51,6 +57,11 @@ body {
 .u-mb-m {
   margin-bottom: 4rem;
 }
+@media (max-width: 23.75em) {
+  .u-mb-m {
+    margin-bottom: 1.5rem;
+  }
+}
 
 .u-mb-s {
   margin-bottom: 1.5rem;
@@ -66,6 +77,11 @@ body {
 
 .u-mt-m {
   margin-top: 4rem;
+}
+@media (max-width: 23.75em) {
+  .u-mt-m {
+    margin-top: 1.5rem;
+  }
 }
 
 .u-mt-s {
@@ -106,7 +122,7 @@ body {
   width: 6rem;
   height: 6rem;
   border-radius: 50%;
-  border: 1px solid #e6e6e6;
+  border: none;
   cursor: pointer;
   background-image: linear-gradient(52deg, #101010, rgb(43, 79, 163));
   color: #fafafa;
@@ -117,22 +133,46 @@ body {
   box-shadow: 0 0.5rem 1rem rgba(16, 16, 16, 0.2);
 }
 
-.game-board__row {
+.board__row {
   display: flex;
   justify-content: center;
   margin: 8px auto;
 }
-.game-board__row__box {
+.board__box {
   width: 5rem;
   height: 5rem;
   margin: 0 4px;
   font-size: 3.5rem;
   border-radius: 2px;
-  background-color: #e6e6e6;
+  position: relative;
+  perspective: 180rem;
+  -moz-perspective: 180rem;
+  overflow: hidden;
+  transition: background-color 0.5s;
+}
+.board__square {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: background-color 0.5s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  transition: transform 1s;
+}
+.board__square--front {
+  background-color: #e6e6e6;
+}
+.board__square--front.flipped {
+  transform: rotateX(180deg);
+}
+.board__square--back {
+  transform: rotateX(-180deg);
+}
+.board__square--back.flipped {
+  transform: rotateX(0);
 }
 
 .keyboard__row {
@@ -143,7 +183,6 @@ body {
   box-shadow: none;
   background-color: #fafafa;
   border-radius: 1rem;
-  width: 3rem;
   height: 4rem;
   font-size: 1.6rem;
   font-weight: 500;
@@ -151,6 +190,9 @@ body {
   cursor: pointer;
   text-transform: uppercase;
   transition: all, 0.2s;
+}
+.keyboard__button--letter {
+  width: 3rem;
 }
 .keyboard__button--del, .keyboard__button--enter {
   width: auto;
